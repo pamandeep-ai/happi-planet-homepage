@@ -34,22 +34,86 @@
 </header>
 
 <!-- 01 HERO: PROBLEM + SOLUTION -->
-<section class="hero">
-  <div class="wrap">
-    <div class="hero-grid">
-      <div class="hero-copy">
-        <span class="eyebrow">Better home cleaning</span>
-        <h1>Grease. Limescale. Stains.<br><span>Sorted.</span></h1>
-        <p class="lead">Powerful cleaning. Less scrubbing. Made in India.</p>
-        <div class="hero-ctas">
-          <a class="btn btn-primary" href="#bestsellers">Shop Bestsellers</a>
-          <a class="btn btn-ghost" href="#shop-by-problem">Find My Fix</a>
+<section class="hero" id="heroCarousel" aria-label="Happi Planet highlights" aria-roledescription="carousel">
+  <div class="hero-slider">
+    <div class="hero-track" id="heroTrack">
+      <article class="hero-slide hero-slide--clean is-active" role="group" aria-roledescription="slide" aria-label="1 of 3">
+        <div class="wrap">
+          <div class="hero-grid">
+            <div class="hero-copy">
+              <span class="eyebrow">Better home cleaning</span>
+              <h1>Grease. Limescale. Stains.<br><span>Sorted.</span></h1>
+              <p class="lead">Powerful cleaning. Less scrubbing. Made in India.</p>
+              <div class="hero-ctas">
+                <a class="btn btn-primary" href="#bestsellers">Shop Bestsellers</a>
+                <a class="btn btn-ghost" href="#shop-by-problem">Find My Fix</a>
+              </div>
+              <div class="hero-proof"><span class="stars">★★★★★</span> 4.8 from 1,500+ verified reviews</div>
+            </div>
+            <div class="hero-visual">
+              <img class="hero-art" src="assets/happi-hero-lifestyle.webp" alt="A woman wiping a kitchen counter in a bright, naturally lit home" width="1536" height="1024" fetchpriority="high" decoding="async">
+            </div>
+          </div>
         </div>
-        <div class="hero-proof"><span class="stars">★★★★★</span> 4.8 from 1,500+ verified reviews</div>
+      </article>
+
+      <article class="hero-slide hero-slide--kitchen" role="group" aria-roledescription="slide" aria-label="2 of 3" aria-hidden="true">
+        <div class="wrap">
+          <div class="hero-grid">
+            <div class="hero-copy">
+              <span class="eyebrow">The everyday reset</span>
+              <h1>Grease. Grime.<br><span>Gone.</span></h1>
+              <p class="lead">Power through everyday kitchen mess with less scrubbing.</p>
+              <div class="hero-ctas">
+                <a class="btn btn-primary" href="https://www.happi-planet.com/products/happi-planet-kitchen-cleaner-india-s-1st-foaming-formulation-for-less-scrubbing-500ml-suitable-for-stoves-chimneys-counter-tops-appliances-walls-cabinets-non-toxic-natural" tabindex="-1">Shop Kitchen Cleaner</a>
+                <a class="btn btn-ghost" href="#shop-by-problem" tabindex="-1">Find My Fix</a>
+              </div>
+              <div class="hero-proof">Less scrubbing · No harsh fumes</div>
+            </div>
+            <div class="hero-visual">
+              <img class="hero-art" src="assets/happi-kitchen-reset-banner.webp" alt="A clean kitchen counter with a stove, sink and reusable cloth" width="1536" height="1024" loading="lazy" decoding="async">
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="hero-slide hero-slide--home" role="group" aria-roledescription="slide" aria-label="3 of 3" aria-hidden="true">
+        <div class="wrap">
+          <div class="hero-grid">
+            <div class="hero-copy">
+              <span class="eyebrow">Powered by nature</span>
+              <h1>Clean home.<br><span>Clear conscience.</span></h1>
+              <p class="lead">Nature-powered essentials made for everyday Indian homes.</p>
+              <div class="hero-ctas">
+                <a class="btn btn-primary" href="https://www.happi-planet.com/collections/home" tabindex="-1">Shop Home Care</a>
+                <a class="btn btn-ghost" href="#routine" tabindex="-1">Explore Bundles</a>
+              </div>
+              <div class="hero-proof">Plant-based · Cruelty-free · Biodegradable</div>
+            </div>
+            <div class="hero-visual">
+              <img class="hero-art" src="assets/happi-home-care-banner.webp" alt="Reusable cleaning cloths and a natural scrub brush in a woven basket" width="1536" height="1024" loading="lazy" decoding="async">
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <div class="hero-controls" aria-label="Hero banner controls">
+      <button class="hero-arrow hero-pause" type="button" aria-label="Pause automatic banners">
+        <svg class="hero-pause-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14M16 5v14"/></svg>
+        <svg class="hero-play-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 10 7-10 7Z"/></svg>
+      </button>
+      <button class="hero-arrow hero-prev" type="button" aria-label="Previous banner">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
+      </button>
+      <div class="hero-dots" role="group" aria-label="Choose a banner">
+        <button class="hero-dot is-active" type="button" aria-label="Show banner 1" aria-current="true"></button>
+        <button class="hero-dot" type="button" aria-label="Show banner 2"></button>
+        <button class="hero-dot" type="button" aria-label="Show banner 3"></button>
       </div>
-      <div class="hero-visual">
-        <img class="hero-art" src="assets/happi-hero-lifestyle.webp" alt="A woman wiping a kitchen counter in a bright, naturally lit home" width="1536" height="1024" fetchpriority="high" decoding="async">
-      </div>
+      <button class="hero-arrow hero-next" type="button" aria-label="Next banner">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+      </button>
     </div>
   </div>
   <div class="promise-strip" aria-label="Our promises">
@@ -544,6 +608,83 @@
 </div>
 
 <script>
+  const heroCarousel = document.getElementById('heroCarousel');
+  const heroTrack = document.getElementById('heroTrack');
+  const heroSlides = Array.from(heroCarousel.querySelectorAll('.hero-slide'));
+  const heroDots = Array.from(heroCarousel.querySelectorAll('.hero-dot'));
+  const heroPauseButton = heroCarousel.querySelector('.hero-pause');
+  const reduceHeroMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let currentHeroSlide = 0;
+  let heroTimer = null;
+  let heroTouchStart = null;
+  let heroAutoplayPaused = false;
+  function stopHeroAutoplay(){
+    if(heroTimer){ clearInterval(heroTimer); heroTimer = null; }
+  }
+  function startHeroAutoplay(){
+    stopHeroAutoplay();
+    if(!reduceHeroMotion && !heroAutoplayPaused && !document.hidden){
+      heroTimer = setInterval(()=>showHeroSlide(currentHeroSlide + 1), 6500);
+    }
+  }
+  function showHeroSlide(index, userInitiated = false){
+    currentHeroSlide = (index + heroSlides.length) % heroSlides.length;
+    heroTrack.style.transform = `translate3d(-${currentHeroSlide * 100}%, 0, 0)`;
+    heroSlides.forEach((slide, slideIndex)=>{
+      const active = slideIndex === currentHeroSlide;
+      slide.classList.toggle('is-active', active);
+      slide.setAttribute('aria-hidden', active ? 'false' : 'true');
+      slide.querySelectorAll('a, button').forEach(control=>{
+        if(active) control.removeAttribute('tabindex');
+        else control.setAttribute('tabindex', '-1');
+      });
+    });
+    heroDots.forEach((dot, dotIndex)=>{
+      const active = dotIndex === currentHeroSlide;
+      dot.classList.toggle('is-active', active);
+      if(active) dot.setAttribute('aria-current', 'true');
+      else dot.removeAttribute('aria-current');
+    });
+    if(userInitiated) startHeroAutoplay();
+  }
+  heroCarousel.querySelector('.hero-prev').addEventListener('click', ()=>showHeroSlide(currentHeroSlide - 1, true));
+  heroCarousel.querySelector('.hero-next').addEventListener('click', ()=>showHeroSlide(currentHeroSlide + 1, true));
+  heroPauseButton.addEventListener('click', ()=>{
+    heroAutoplayPaused = !heroAutoplayPaused;
+    heroPauseButton.classList.toggle('is-paused', heroAutoplayPaused);
+    heroPauseButton.setAttribute('aria-label', heroAutoplayPaused ? 'Play automatic banners' : 'Pause automatic banners');
+    if(heroAutoplayPaused) stopHeroAutoplay();
+    else startHeroAutoplay();
+  });
+  heroDots.forEach((dot, index)=>dot.addEventListener('click', ()=>showHeroSlide(index, true)));
+  heroCarousel.addEventListener('mouseenter', stopHeroAutoplay);
+  heroCarousel.addEventListener('mouseleave', startHeroAutoplay);
+  heroCarousel.addEventListener('focusin', stopHeroAutoplay);
+  heroCarousel.addEventListener('focusout', event=>{
+    if(!heroCarousel.contains(event.relatedTarget)) startHeroAutoplay();
+  });
+  heroCarousel.addEventListener('touchstart', event=>{
+    heroTouchStart = event.changedTouches[0].clientX;
+    stopHeroAutoplay();
+  }, { passive: true });
+  heroCarousel.addEventListener('touchend', event=>{
+    if(heroTouchStart === null) return;
+    const distance = event.changedTouches[0].clientX - heroTouchStart;
+    if(Math.abs(distance) > 42) showHeroSlide(currentHeroSlide + (distance < 0 ? 1 : -1), true);
+    else startHeroAutoplay();
+    heroTouchStart = null;
+  }, { passive: true });
+  heroCarousel.addEventListener('keydown', event=>{
+    if(event.key === 'ArrowLeft') showHeroSlide(currentHeroSlide - 1, true);
+    if(event.key === 'ArrowRight') showHeroSlide(currentHeroSlide + 1, true);
+  });
+  document.addEventListener('visibilitychange', ()=>{
+    if(document.hidden) stopHeroAutoplay();
+    else startHeroAutoplay();
+  });
+  showHeroSlide(0);
+  startHeroAutoplay();
+
   let cart = [];
   function toggleCart(){ document.getElementById('cartDrawer').classList.toggle('open'); }
   function addToCart(btn,name,price,img){
