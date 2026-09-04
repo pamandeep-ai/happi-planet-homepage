@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happi Planet | Effective Cleaning, Powered By Nature</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/visual-system.css">
+</head>
+<body>
+
+<div class="top-bar">FREE shipping on every bundle across India · 100% plant-based & non-toxic · Loved by 50,000+ happy homes</div>
+
+<header>
+  <div class="nav-row">
+    <a href="https://www.happi-planet.com/"><img src="https://www.happi-planet.com/cdn/shop/files/Happi_Planet_-_Brand_Color_1_eer_180x_69c215c4-391d-48e8-948d-7a43bbfda874.avif?v=1770711551&width=200" alt="Happi Planet"></a>
+    <nav class="desktop-links">
+      <a href="#shop-by-problem">Find My Fix</a>
+      <a href="#bestsellers">Bestsellers</a>
+      <a href="#routine">Bundles</a>
+      <a href="https://www.happi-planet.com/pages/how-it-works">How It Works</a>
+      <a href="https://www.happi-planet.com/pages/faqs">FAQs</a>
+    </nav>
+    <div class="nav-icons">
+      <button aria-label="Search"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.6" y2="16.6"/></svg></button>
+      <button aria-label="Cart" onclick="toggleCart()">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6"/></svg>
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- 01 HERO: PROBLEM + SOLUTION -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <span class="eyebrow">Better home cleaning</span>
+        <h1>Grease. Limescale. Stains.<br><span>Sorted.</span></h1>
+        <p class="lead">Powerful cleaning. Less scrubbing. Made in India.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-primary" href="#bestsellers">Shop Bestsellers</a>
+          <a class="btn btn-ghost" href="#shop-by-problem">Find My Fix</a>
+        </div>
+        <div class="hero-proof"><span class="stars">★★★★★</span> 4.8 from 1,500+ verified reviews</div>
+      </div>
+      <div class="hero-visual">
+        <img class="hero-art" src="assets/happi-hero-lifestyle.png" alt="A woman wiping a kitchen counter in a bright, naturally lit home" fetchpriority="high">
+      </div>
+    </div>
+  </div>
+  <div class="promise-strip" aria-label="Our promises">
+    <div class="promise-marquee">
+      <div class="promise-track">
+        <div class="promise-set">
+          <span class="promise-item"><span class="promise-icon" aria-hidden="true">✦</span><strong>Effective cleaning</strong><span>Zero compromise</span></span>
+          <span class="promise-item"><span class="promise-icon" aria-hidden="true">♧</span><strong>Powered by nature</strong><span>Plant-based ingredients</span></span>
+          <span class="promise-item"><span class="promise-icon" aria-hidden="true">◇</span><strong>Non-toxic</strong><span>300+ toxins blacklisted</span></span>
+          <span class="promise-item"><span class="promise-icon" aria-hidden="true">✓</span><strong>Backed by experts</strong><span>Dermatologist recommended</span></span>
+          <span class="promise-item"><span class="promise-icon" aria-hidden="true">◎</span><strong>Love thy planet</strong><span>Readily biodegradable</span></span>
+        </div>
+        <div class="promise-set" aria-hidden="true">
+          <span class="promise-item"><span class="promise-icon">✦</span><strong>Effective cleaning</strong><span>Zero compromise</span></span>
+          <span class="promise-item"><span class="promise-icon">♧</span><strong>Powered by nature</strong><span>Plant-based ingredients</span></span>
+          <span class="promise-item"><span class="promise-icon">◇</span><strong>Non-toxic</strong><span>300+ toxins blacklisted</span></span>
+          <span class="promise-item"><span class="promise-icon">✓</span><strong>Backed by experts</strong><span>Dermatologist recommended</span></span>
+          <span class="promise-item"><span class="promise-icon">◎</span><strong>Love thy planet</strong><span>Readily biodegradable</span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 02 SHOP BY PROBLEM -->
+<section id="shop-by-problem">
+  <div class="wrap">
+    <div class="head-block">
+      <span class="eyebrow">Start here</span>
+      <h2>What are you dealing with?</h2>
+    </div>
+    <div class="problem-grid">
+      <a class="problem-card" href="https://www.happi-planet.com/products/happi-planet-kitchen-cleaner-india-s-1st-foaming-formulation-for-less-scrubbing-500ml-suitable-for-stoves-chimneys-counter-tops-appliances-walls-cabinets-non-toxic-natural">
+        <div class="img-box"><img src="assets/problem-grease.jpg" alt="Grease buildup" loading="lazy" decoding="async"></div>
+        <div class="cap">Grease →</div>
+      </a>
+      <a class="problem-card" href="https://www.happi-planet.com/products/tap-cleaner-lime-scale-remover">
+        <div class="img-box"><img src="assets/problem-limescale.jpg" alt="Limescale on a tap" loading="lazy" decoding="async"></div>
+        <div class="cap">Limescale →</div>
+      </a>
+      <a class="problem-card" href="https://www.happi-planet.com/products/magic-eraser">
+        <div class="img-box"><img src="assets/problem-stains.jpg" alt="Stubborn stains" loading="lazy" decoding="async"></div>
+        <div class="cap">Stains →</div>
+      </a>
+      <a class="problem-card" href="https://www.happi-planet.com/collections/home">
+        <div class="img-box"><img src="assets/problem-dirt.jpg" alt="Everyday dirt" loading="lazy" decoding="async"></div>
+        <div class="cap">Everyday Dirt →</div>
+      </a>
+    </div>
+    <div class="aov-banner">
+      <img class="banner-art" src="assets/happi-bundle-backdrop.png" alt="" loading="lazy" decoding="async">
+      <div class="banner-products" aria-hidden="true">
+        <img src="https://www.happi-planet.com/cdn/shop/files/WebsiteImagesLimeScale-01_7dde5639-eabb-439c-a335-dd2493db5827.jpg?v=1738842855&width=400" alt="" loading="lazy" decoding="async">
+        <img src="https://www.happi-planet.com/cdn/shop/files/1lt_Website_Images_Toilet_Cleaner-01.jpg?v=1776160681&width=400" alt="" loading="lazy" decoding="async">
+        <img src="https://www.happi-planet.com/cdn/shop/files/WebsiteImagesPowder-01.jpg?v=1774367876&width=400" alt="" loading="lazy" decoding="async">
+      </div>
+      <p><span class="banner-heading">Tackling hard water?</span> <span>Complete the routine</span> with Tap Cleaner + Toilet Cleaner + Machine Descaler.</p>
+      <a class="btn btn-outline-w" href="#routine">See the Bundle →</a>
+    </div>
+  </div>
+</section>
+
+<!-- 03 BESTSELLERS + TRUST -->
+<section class="section-mint" id="bestsellers">
+  <div class="wrap">
+    <div class="head-block">
+      <span class="eyebrow">Loved by thousands</span>
+      <h2>Start with our bestsellers</h2>
+    </div>
+    <div class="prod-scroller">
+      <div class="prod-card">
+        <div class="img-box"><span class="prod-off">19% OFF</span><img src="https://www.happi-planet.com/cdn/shop/files/WebsiteImagesLimeScale-01_7dde5639-eabb-439c-a335-dd2493db5827.jpg?v=1738842855&width=400" alt="Tap Cleaner & Limescale Remover" loading="lazy" decoding="async"></div>
+        <div class="prod-body">
+          <h4>Tap Cleaner & Limescale Remover</h4>
+          <div class="prod-rating">★★★★★ (268)</div>
+          <div class="prod-price"><span class="now">₹200</span><span class="was">₹249</span></div>
+          <button class="prod-add" onclick="addToCart(this,'Tap Cleaner','₹200','https://www.happi-planet.com/cdn/shop/files/WebsiteImagesLimeScale-01_7dde5639-eabb-439c-a335-dd2493db5827.jpg?v=1738842855&width=200')">Add To Cart</button>
+        </div>
+      </div>
+      <div class="prod-card">
+        <div class="img-box"><span class="prod-off">33% OFF</span><img src="https://www.happi-planet.com/cdn/shop/files/KitchenCleanerWebsiteImages-01.jpg?v=1738934865&width=400" alt="Kitchen Cleaner" loading="lazy" decoding="async"></div>
+        <div class="prod-body">
+          <h4>Kitchen Cleaner</h4>
+          <div class="prod-rating">★★★★★ (308)</div>
+          <div class="prod-price"><span class="now">₹200</span><span class="was">₹299</span></div>
+          <button class="prod-add" onclick="addToCart(this,'Kitchen Cleaner','₹200','https://www.happi-planet.com/cdn/shop/files/KitchenCleanerWebsiteImages-01.jpg?v=1738934865&width=200')">Add To Cart</button>
+        </div>
+      </div>
+      <div class="prod-card">
+        <div class="img-box"><span class="prod-off">30% OFF</span><img src="https://www.happi-planet.com/cdn/shop/files/Website_Images_Metal_Cleaner-01.jpg?v=1737196387&width=400" alt="Copper Bronze & Brass Cleaner" loading="lazy" decoding="async"></div>
+        <div class="prod-body">
+          <h4>Copper, Bronze & Brass Cleaner</h4>
+          <div class="prod-rating">★★★★★ (265)</div>
+          <div class="prod-price"><span class="now">₹209</span><span class="was">₹299</span></div>
+          <button class="prod-add" onclick="addToCart(this,'Copper Cleaner','₹209','https://www.happi-planet.com/cdn/shop/files/Website_Images_Metal_Cleaner-01.jpg?v=1737196387&width=200')">Add To Cart</button>
+        </div>
+      </div>
+      <div class="prod-card">
+        <div class="img-box"><span class="prod-off">33% OFF</span><img src="https://www.happi-planet.com/cdn/shop/files/WebsiteImages-01.jpg?v=1763025507&width=400" alt="Washing Machine Cleaner & Descaler" loading="lazy" decoding="async"></div>
+        <div class="prod-body">
+          <h4>Washing Machine Cleaner & Descaler</h4>
+          <div class="prod-rating">★★★★★ (208)</div>
+          <div class="prod-price"><span class="now">₹200</span><span class="was">₹299</span></div>
+          <button class="prod-add" onclick="addToCart(this,'Machine Cleaner','₹200','https://www.happi-planet.com/cdn/shop/files/WebsiteImages-01.jpg?v=1763025507&width=200')">Add To Cart</button>
+        </div>
+      </div>
+      <div class="prod-card">
+        <div class="img-box"><span class="prod-off">33% OFF</span><img src="https://www.happi-planet.com/cdn/shop/files/WebsiteImagesKitchenTowelBox-01_56256767-9a4f-4edd-a864-1089d83ba30e.jpg?v=1763702367&width=400" alt="Reusable Kitchen Towel" loading="lazy" decoding="async"></div>
+        <div class="prod-body">
+          <h4>Reusable Kitchen Towel</h4>
+          <div class="prod-rating">★★★★★ (209)</div>
+          <div class="prod-price"><span class="now">₹200</span><span class="was">₹299</span></div>
+          <button class="prod-add" onclick="addToCart(this,'Kitchen Towel','₹200','https://www.happi-planet.com/cdn/shop/files/WebsiteImagesKitchenTowelBox-01_56256767-9a4f-4edd-a864-1089d83ba30e.jpg?v=1763702367&width=200')">Add To Cart</button>
+        </div>
+      </div>
+      <div class="prod-card">
+        <div class="img-box"><span class="prod-off">33% OFF</span><img src="https://www.happi-planet.com/cdn/shop/files/WebsiteImagesMagicEraser-01_82fc4c35-3fd2-4612-83f8-ab2018a141d6.jpg?v=1772693983&width=400" alt="Magic Eraser" loading="lazy" decoding="async"></div>
+        <div class="prod-body">
+          <h4>Magic Eraser</h4>
+          <div class="prod-rating">★★★★★ (244)</div>
+          <div class="prod-price"><span class="now">₹200</span><span class="was">₹299</span></div>
+          <button class="prod-add" onclick="addToCart(this,'Magic Eraser','₹200','https://www.happi-planet.com/cdn/shop/files/WebsiteImagesMagicEraser-01_82fc4c35-3fd2-4612-83f8-ab2018a141d6.jpg?v=1772693983&width=200')">Add To Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <aside class="campaign-banner campaign-kitchen" aria-labelledby="kitchen-banner-title">
+      <img class="campaign-art" src="assets/happi-kitchen-reset-banner.webp" alt="" width="1536" height="1024" loading="lazy" decoding="async">
+      <div class="campaign-copy">
+        <span class="eyebrow">The everyday reset</span>
+        <h3 id="kitchen-banner-title">A fresh start for your kitchen.</h3>
+        <p>Tackle everyday grease with Kitchen Cleaner.</p>
+        <a class="btn btn-primary" href="https://www.happi-planet.com/products/happi-planet-kitchen-cleaner-india-s-1st-foaming-formulation-for-less-scrubbing-500ml-suitable-for-stoves-chimneys-counter-tops-appliances-walls-cabinets-non-toxic-natural">Shop Kitchen Cleaner</a>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<!-- 04 PRODUCT PROOF -->
+<section id="cleaning-guide" aria-labelledby="cleaning-guide-title">
+  <div class="wrap">
+    <div class="head-block">
+      <span class="eyebrow">Your cleaning guide</span>
+      <h2 id="cleaning-guide-title">Tough mess? Find the right cleaner.</h2>
+    </div>
+    <div class="proof-grid">
+      <article class="proof-card" aria-labelledby="tap-problem">
+        <div class="proof-problem">
+          <span class="proof-label">The mess</span>
+          <h3 id="tap-problem">White marks on taps?</h3>
+        </div>
+        <div class="proof-product">
+          <div class="img-box"><img src="https://www.happi-planet.com/cdn/shop/files/WebsiteImagesLimeScale-01_7dde5639-eabb-439c-a335-dd2493db5827.jpg?v=1738842855&width=500" alt="Happi Planet Tap Cleaner &amp; Limescale Remover" loading="lazy" width="500" height="500" decoding="async"></div>
+          <div class="proof-body">
+            <span class="proof-label">Use this</span>
+            <h4>Tap Cleaner &amp; Limescale Remover</h4>
+          </div>
+        </div>
+        <div class="proof-outcome">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></svg>
+          <div><span class="proof-label">The result</span><p>Clean, shiny taps &amp; fittings.</p></div>
+        </div>
+      </article>
+      <article class="proof-card" aria-labelledby="grease-problem">
+        <div class="proof-problem">
+          <span class="proof-label">The mess</span>
+          <h3 id="grease-problem">Greasy stove &amp; counters?</h3>
+        </div>
+        <div class="proof-product">
+          <div class="img-box"><img src="https://www.happi-planet.com/cdn/shop/files/KitchenCleanerWebsiteImages-01.jpg?v=1738934865&width=500" alt="Happi Planet Kitchen Cleaner" loading="lazy" width="500" height="500" decoding="async"></div>
+          <div class="proof-body">
+            <span class="proof-label">Use this</span>
+            <h4>Kitchen Cleaner</h4>
+          </div>
+        </div>
+        <div class="proof-outcome">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></svg>
+          <div><span class="proof-label">The result</span><p>Grease lifted. Surfaces wiped clean.</p></div>
+        </div>
+      </article>
+      <article class="proof-card" aria-labelledby="metal-problem">
+        <div class="proof-problem">
+          <span class="proof-label">The mess</span>
+          <h3 id="metal-problem">Dull copper &amp; brass?</h3>
+        </div>
+        <div class="proof-product">
+          <div class="img-box"><img src="https://www.happi-planet.com/cdn/shop/files/Website_Images_Metal_Cleaner-01.jpg?v=1737196387&width=500" alt="Happi Planet Copper, Bronze &amp; Brass Cleaner" loading="lazy" width="500" height="500" decoding="async"></div>
+          <div class="proof-body">
+            <span class="proof-label">Use this</span>
+            <h4>Copper, Bronze &amp; Brass Cleaner</h4>
+          </div>
+        </div>
+        <div class="proof-outcome">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></svg>
+          <div><span class="proof-label">The result</span><p>Tarnish lifted. Shine restored.</p></div>
+        </div>
+      </article>
+    </div>
+
+    <div class="steps-row">
+      <div class="step">
+        <div class="step-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M7 2h4l1 4-1 2H7L6 6z"/><path d="M9 8v14"/></svg></div>
+        <p>SPRAY</p>
+      </div>
+      <div class="step">
+        <div class="step-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
+        <p>REST</p>
+      </div>
+      <div class="step">
+        <div class="step-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M4 20l7-7"/><path d="M14 6l4 4-8 8H6v-4z"/></svg></div>
+        <p>WIPE / RINSE</p>
+      </div>
+    </div>
+
+    <div class="principle-row">
+      <span class="principle-chip">Plant-derived ingredients</span>
+      <span class="principle-chip">300+ chemicals blacklisted</span>
+      <span class="principle-chip">Dermatologist tested</span>
+    </div>
+  </div>
+</section>
+
+<!-- 05 EXISTING-USER TRUST -->
+<section class="section-sand">
+  <div class="wrap">
+    <div class="head-block">
+      <span class="eyebrow">Existing-user trust</span>
+      <h2>Real homes. Real results.</h2>
+      <p class="review-illustration-note">Illustrative cleaning comparisons, not customer photos or verified product results.</p>
+    </div>
+    <div class="review-grid">
+      <div class="review-card">
+        <figure class="review-demonstration">
+          <div class="review-comparison" aria-label="Illustrative kitchen hob before and after cleaning; AI-generated illustration, not a product test">
+            <img class="review-pair-image" src="assets/review-kitchen-before-after.webp" alt="Illustrative kitchen hob before and after cleaning; AI-generated illustration" width="1536" height="1024" loading="lazy" decoding="async">
+            <span class="comparison-label comparison-before">Before</span>
+            <span class="comparison-label comparison-after">After</span>
+          </div>
+          <figcaption><strong>Kitchen Cleaner</strong>AI-generated illustration, not a product test.</figcaption>
+        </figure>
+        <div class="review-content">
+          <div class="stars">★★★★★</div>
+        <p class="quote">"Switched my whole kitchen to Happi Planet. The bundle made it so affordable, and the foaming kitchen cleaner is genuinely better than my old chemical one."</p>
+        <div class="who">Ananya R.</div>
+        <div class="loc">Bengaluru · Verified Buyer</div>
+        </div>
+      </div>
+      <div class="review-card">
+        <figure class="review-demonstration">
+          <div class="review-comparison" aria-label="Illustrative bathroom tap before and after cleaning; AI-generated illustration, not a product test">
+            <img class="review-pair-image" src="assets/review-tap-before-after.webp" alt="Illustrative bathroom tap before and after cleaning; AI-generated illustration" width="1536" height="1024" loading="lazy" decoding="async">
+            <span class="comparison-label comparison-before">Before</span>
+            <span class="comparison-label comparison-after">After</span>
+          </div>
+          <figcaption><strong>Tap & Limescale Cleaner</strong>AI-generated illustration, not a product test.</figcaption>
+        </figure>
+        <div class="review-content">
+          <div class="stars">★★★★★</div>
+        <p class="quote">"Built the 5-pack and saved a ton. No harsh smell, safe around my toddler. This is the way cleaning products should be."</p>
+        <div class="who">Karthik M.</div>
+        <div class="loc">Hyderabad · Verified Buyer</div>
+        </div>
+      </div>
+      <div class="review-card">
+        <figure class="review-demonstration">
+          <div class="review-comparison" aria-label="Illustrative copper vessel before and after polishing; AI-generated illustration, not a product test">
+            <img class="review-pair-image" src="assets/review-metal-before-after.webp" alt="Illustrative copper vessel before and after polishing; AI-generated illustration" width="1536" height="1024" loading="lazy" decoding="async">
+            <span class="comparison-label comparison-before">Before</span>
+            <span class="comparison-label comparison-after">After</span>
+          </div>
+          <figcaption><strong>Copper, Bronze & Brass Cleaner</strong>AI-generated illustration, not a product test.</figcaption>
+        </figure>
+        <div class="review-content">
+          <div class="stars">★★★★★</div>
+        <p class="quote">"Love that I can mix laundry, kitchen and skin in one bundle. Ordered the Complete Home box, saved over ₹400 and my house smells amazing."</p>
+        <div class="who">Priya S.</div>
+        <div class="loc">Mumbai · Verified Buyer</div>
+        </div>
+      </div>
+      <div class="review-card">
+        <figure class="review-demonstration">
+          <div class="review-comparison" aria-label="Illustrative saucepan before and after washing; AI-generated illustration, not a product test">
+            <img class="review-pair-image" src="assets/review-dishwash-before-after.webp" alt="Illustrative saucepan before and after washing; AI-generated illustration" width="1536" height="1024" loading="lazy" decoding="async">
+            <span class="comparison-label comparison-before">Before</span>
+            <span class="comparison-label comparison-after">After</span>
+          </div>
+          <figcaption><strong>Dishwash Liquid</strong>AI-generated illustration, not a product test.</figcaption>
+        </figure>
+        <div class="review-content">
+          <div class="stars">★★★★★</div>
+        <p class="quote">"My maid always complained about our dishwash giving her dry skin, but not anymore. Thank you Happi Planet!"</p>
+        <div class="who">Zahabia</div>
+        <div class="loc">Dishwash Liquid · Verified Buyer</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 06 REELS / UGC -->
+<section>
+  <div class="wrap">
+    <div class="head-block">
+      <span class="eyebrow">See it in real homes</span>
+      <h2>Reels & UGC</h2>
+    </div>
+    <div class="reel-scroller">
+      <article class="reel-card">
+        <video class="reel-video" data-src="assets/happi-planet-reel-01.mp4" poster="assets/happi-planet-reel-01.webp" preload="none" muted loop playsinline webkit-playsinline aria-label="Happi Planet customer reel 1"></video>
+        <button class="reel-control reel-sound" type="button" aria-label="Unmute reel 1">
+          <svg class="sound-off" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6.5 9H3v6h3.5l4.5 4V5Z"/><path d="m16 9 5 6m0-6-5 6"/></svg>
+          <svg class="sound-on" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6.5 9H3v6h3.5l4.5 4V5Z"/><path d="M15 9.5a4 4 0 0 1 0 5m2.5-7.5a7 7 0 0 1 0 10"/></svg>
+        </button>
+        <button class="reel-control reel-play-toggle" type="button" aria-label="Play reel 1">
+          <svg class="icon-play" viewBox="0 0 24 24" aria-hidden="true"><path d="m8 5 11 7-11 7V5Z"/></svg>
+          <svg class="icon-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5h4v14H7zm6 0h4v14h-4z"/></svg>
+        </button>
+      </article>
+      <article class="reel-card">
+        <video class="reel-video" data-src="assets/happi-planet-reel-02.mp4" poster="assets/happi-planet-reel-02.webp" preload="none" muted loop playsinline webkit-playsinline aria-label="Happi Planet customer reel 2"></video>
+        <button class="reel-control reel-sound" type="button" aria-label="Unmute reel 2">
+          <svg class="sound-off" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6.5 9H3v6h3.5l4.5 4V5Z"/><path d="m16 9 5 6m0-6-5 6"/></svg>
+          <svg class="sound-on" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6.5 9H3v6h3.5l4.5 4V5Z"/><path d="M15 9.5a4 4 0 0 1 0 5m2.5-7.5a7 7 0 0 1 0 10"/></svg>
+        </button>
+        <button class="reel-control reel-play-toggle" type="button" aria-label="Play reel 2">
+          <svg class="icon-play" viewBox="0 0 24 24" aria-hidden="true"><path d="m8 5 11 7-11 7V5Z"/></svg>
+          <svg class="icon-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5h4v14H7zm6 0h4v14h-4z"/></svg>
+        </button>
+      </article>
+      <article class="reel-card">
+        <video class="reel-video" data-src="assets/happi-planet-reel-03.mp4" poster="assets/happi-planet-reel-03.webp" preload="none" muted loop playsinline webkit-playsinline aria-label="Happi Planet customer reel 3"></video>
+        <button class="reel-control reel-sound" type="button" aria-label="Unmute reel 3">
+          <svg class="sound-off" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6.5 9H3v6h3.5l4.5 4V5Z"/><path d="m16 9 5 6m0-6-5 6"/></svg>
+          <svg class="sound-on" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6.5 9H3v6h3.5l4.5 4V5Z"/><path d="M15 9.5a4 4 0 0 1 0 5m2.5-7.5a7 7 0 0 1 0 10"/></svg>
+        </button>
+        <button class="reel-control reel-play-toggle" type="button" aria-label="Play reel 3">
+          <svg class="icon-play" viewBox="0 0 24 24" aria-hidden="true"><path d="m8 5 11 7-11 7V5Z"/></svg>
+          <svg class="icon-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5h4v14H7zm6 0h4v14h-4z"/></svg>
+        </button>
+      </article>
+    </div>
+
+    <aside class="campaign-banner campaign-home" aria-labelledby="home-banner-title">
+      <picture class="bundle-campaign-picture">
+        <img class="bundle-campaign-art" src="assets/happi-kitchen-reset-bundle-banner.webp" alt="Kitchen Reset bundle with Kitchen Cleaner, Dishwash Liquid and Reusable Kitchen Towel" width="1536" height="1024" loading="lazy" decoding="async">
+      </picture>
+      <div class="campaign-copy">
+        <span class="eyebrow">Better together</span>
+        <h3 id="home-banner-title">Your home. Your cleaning kit.</h3>
+        <p>Your cleaning essentials, together in one bundle.</p>
+        <a class="btn campaign-light-button" href="#routine">Explore bundles</a>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<!-- 07 COMPLETE THE ROUTINE / BUNDLES -->
+<section class="section-mint" id="routine">
+  <div class="wrap">
+    <div class="head-block">
+      <span class="eyebrow">Complete the routine</span>
+      <h2>Solve the whole problem, not just one bit of it</h2>
+      <p class="sub">Frequently paired products, bundled at flat prices — the more you add, the more you save.</p>
+    </div>
+    <div class="bundle-grid">
+      <div class="bundle-card">
+        <h3>Kitchen Reset</h3>
+        <p class="bundle-meta">Kitchen Cleaner + Organic Dishwash Liquid + Reusable Kitchen Towel</p>
+        <div class="bundle-thumbs">
+          <img src="https://www.happi-planet.com/cdn/shop/files/KitchenCleanerWebsiteImages-01.jpg?v=1738934865&width=200" alt="Kitchen Cleaner" loading="lazy" decoding="async">
+          <img src="https://www.happi-planet.com/cdn/shop/files/1lt_Website_Images_Dishwash-01.jpg?v=1776153137&width=200" alt="Dishwash Liquid" loading="lazy" decoding="async">
+          <img src="https://www.happi-planet.com/cdn/shop/files/WebsiteImagesKitchenTowelBox-01_56256767-9a4f-4edd-a864-1089d83ba30e.jpg?v=1763702367&width=200" alt="Kitchen Towel" loading="lazy" decoding="async">
+        </div>
+        <div class="bundle-price"><span class="now">₹549</span><span class="was">₹600</span></div>
+        <div class="bundle-save">Save ₹51 · 3-product flat price</div>
+        <a class="btn btn-forest btn-block" href="https://www.happi-planet.com/pages/byob">Get the Kitchen Reset</a>
+      </div>
+      <div class="bundle-card featured">
+        <span class="bundle-tag">Most Paired</span>
+        <h3>Hard Water Rescue</h3>
+        <p class="bundle-meta">Tap Cleaner & Limescale Remover + Non-Toxic Toilet Cleaner + Washing Machine Descaler</p>
+        <div class="bundle-thumbs">
+          <img src="https://www.happi-planet.com/cdn/shop/files/WebsiteImagesLimeScale-01_7dde5639-eabb-439c-a335-dd2493db5827.jpg?v=1738842855&width=200" alt="Tap Cleaner" loading="lazy" decoding="async">
+          <img src="https://www.happi-planet.com/cdn/shop/files/1lt_Website_Images_Toilet_Cleaner-01.jpg?v=1776160681&width=200" alt="Toilet Cleaner" loading="lazy" decoding="async">
+          <img src="https://www.happi-planet.com/cdn/shop/files/WebsiteImagesPowder-01.jpg?v=1774367876&width=200" alt="Washing Machine Descaler" loading="lazy" decoding="async">
+        </div>
+        <div class="bundle-price"><span class="now">₹549</span><span class="was">₹847</span></div>
+        <div class="bundle-save">Save ₹298 · pick any 3 flat price</div>
+        <a class="btn btn-primary btn-block" href="https://www.happi-planet.com/pages/byob">Get Hard Water Rescue</a>
+      </div>
+      <div class="bundle-card">
+        <h3>Complete Happi Home</h3>
+        <p class="bundle-meta">Magic Eraser + Tap Cleaner + Kitchen Cleaner + Copper Cleaner + Machine Descaler</p>
+        <div class="bundle-thumbs">
+          <img src="https://www.happi-planet.com/cdn/shop/files/WebsiteImagesMagicEraser-01_82fc4c35-3fd2-4612-83f8-ab2018a141d6.jpg?v=1772693983&width=200" alt="Magic Eraser" loading="lazy" decoding="async">
+          <img src="https://www.happi-planet.com/cdn/shop/files/WebsiteImagesLimeScale-01_7dde5639-eabb-439c-a335-dd2493db5827.jpg?v=1738842855&width=200" alt="Tap Cleaner" loading="lazy" decoding="async">
+          <img src="https://www.happi-planet.com/cdn/shop/files/Website_Images_Metal_Cleaner-01.jpg?v=1737196387&width=200" alt="Copper Cleaner" loading="lazy" decoding="async">
+        </div>
+        <div class="bundle-price"><span class="now">₹799</span><span class="was">₹1,009</span></div>
+        <div class="bundle-save">Save ₹210 (20% off) · Best value, 5 products</div>
+        <a class="btn btn-forest btn-block" href="https://www.happi-planet.com/pages/build-your-bundle-pack-of-5">Get Complete Happi Home</a>
+      </div>
+    </div>
+    <div class="tier-strip">
+      <span class="tier-chip">Any 2 → ₹379</span>
+      <span class="tier-chip">Any 3 → ₹549</span>
+      <span class="tier-chip">Any 5 → ₹799</span>
+    </div>
+  </div>
+</section>
+
+<!-- 08 FINAL TRUST + FAQ -->
+<section>
+  <div class="wrap">
+    <div class="head-block" style="margin-left:auto;margin-right:auto;text-align:center;max-width:640px;">
+      <span class="eyebrow">Before you go</span>
+      <h2>Nature-powered homecare, made for real Indian homes</h2>
+      <p class="sub">Safe for you and your loved ones — free from 300+ chemicals we refuse to use, cruelty-free, and 100% biodegradable.</p>
+    </div>
+    <div class="trust-indicators">
+      <div class="trust-ind"><strong>50,000+</strong><span>Happy homes</span></div>
+      <div class="trust-ind"><strong>100%</strong><span>Plant-based</span></div>
+      <div class="trust-ind"><strong>Free</strong><span>Shipping on bundles</span></div>
+      <div class="trust-ind"><strong>Cruelty-free</strong><span>& Vegan</span></div>
+    </div>
+    <div style="text-align:center;margin-bottom:36px;"><a class="btn btn-primary" href="https://www.happi-planet.com/collections/bestsellers">Shop Bestsellers</a></div>
+
+    <div style="max-width:720px;margin:0 auto;">
+      <div class="faq-item open" onclick="this.classList.toggle('open')">
+        <div class="faq-q">What makes Happi Planet products different?<span class="plus">+</span></div>
+        <div class="faq-a">Made from ingredients safe for you and your loved ones, including children and pets — free from toxic chemicals and 100% biodegradable.</div>
+      </div>
+      <div class="faq-item" onclick="this.classList.toggle('open')">
+        <div class="faq-q">Are these as effective as regular cleaners?<span class="plus">+</span></div>
+        <div class="faq-a">Yes. Our formulas harness maximum cleaning power from natural ingredients — no harsh chemicals or fumes needed to get results.</div>
+      </div>
+      <div class="faq-item" onclick="this.classList.toggle('open')">
+        <div class="faq-q">How does bundle pricing work?<span class="plus">+</span></div>
+        <div class="faq-a">Pick any 2, 3 or 5 products and pay one flat bundle price (₹379 / ₹549 / ₹799). Mix and match across laundry, kitchen, home and skin.</div>
+      </div>
+      <div class="faq-item" onclick="this.classList.toggle('open')">
+        <div class="faq-q">Is shipping really free?<span class="plus">+</span></div>
+        <div class="faq-a">Every bundle ships free across India, with most orders delivered within 2 to 4 working days.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-col">
+        <div class="foot-logo">happi planet</div>
+        <p>Nature Powered homecare products that are safe for you & your loved ones.</p>
+      </div>
+      <div class="foot-col">
+        <h5>Shop</h5>
+        <a href="https://www.happi-planet.com/collections/bestsellers">Bestsellers</a>
+        <a href="https://www.happi-planet.com/collections/kitchen">Kitchen</a>
+        <a href="https://www.happi-planet.com/collections/laundry">Laundry</a>
+        <a href="https://www.happi-planet.com/collections/bundles">Starter Kits</a>
+      </div>
+      <div class="foot-col">
+        <h5>About</h5>
+        <a href="https://www.happi-planet.com/pages/how-it-works">How It Works</a>
+        <a href="https://www.happi-planet.com/pages/faqs">FAQs</a>
+        <a href="https://www.happi-planet.com/pages/contact">Contact Us</a>
+      </div>
+      <div class="foot-col">
+        <h5>Get in touch</h5>
+        <a href="tel:+919930123234">+91 9930 123 234</a>
+        <a href="mailto:hello@happi-planet.com">hello@happi-planet.com</a>
+      </div>
+    </div>
+    <div class="foot-bottom">© 2026 Happi Planet Eco Products Private Limited</div>
+  </div>
+</footer>
+
+<!-- CART DRAWER — tier-aware -->
+<div class="cart-drawer" id="cartDrawer">
+  <div class="cart-scrim" onclick="toggleCart()"></div>
+  <div class="cart-panel">
+    <div class="cart-head"><h3 style="font-size:18px;font-weight:600;">Your cart</h3><button class="cart-close" type="button" onclick="toggleCart()" aria-label="Close cart">Close</button></div>
+    <div class="tier-track"><div class="tier-fill" id="tierFill"></div></div>
+    <p class="tier-note" id="tierNote">Add 2 products to unlock the ₹379 bundle price</p>
+    <div id="cartLines"><p style="font-size:13.5px;color:var(--ink-soft);" id="emptyNote">Your cart is empty.</p></div>
+    <div class="subtotal-row"><span>Subtotal</span><span id="subtotal">₹0</span></div>
+    <a class="btn btn-forest btn-block" href="#" style="margin-bottom:10px;">Checkout</a>
+    <a class="btn btn-ghost btn-block" href="#bestsellers" onclick="toggleCart()">Continue Shopping</a>
+  </div>
+</div>
+
+<script>
+  let cart = [];
+  function toggleCart(){ document.getElementById('cartDrawer').classList.toggle('open'); }
+  function addToCart(btn,name,price,img){
+    const priceNum = parseInt(price.replace('₹',''));
+    const existing = cart.find(i=>i.name===name);
+    if(existing){ existing.qty+=1; } else { cart.push({name,price,priceNum,img,qty:1}); }
+    renderCart();
+    if(!document.getElementById('cartDrawer').classList.contains('open')) toggleCart();
+    const orig = btn.textContent; btn.textContent='Added ✓';
+    setTimeout(()=>{btn.textContent=orig;},1100);
+  }
+  function renderCart(){
+    const lines = document.getElementById('cartLines');
+    lines.innerHTML = '';
+    let total = 0, units = 0;
+    if(cart.length===0){ lines.innerHTML = '<p style="font-size:13.5px;color:var(--ink-soft);">Your cart is empty.</p>'; }
+    cart.forEach(item=>{
+      total += item.priceNum*item.qty; units += item.qty;
+      const div = document.createElement('div'); div.className='cart-line';
+      div.innerHTML = `<div class="cart-line-info" style="display:flex;align-items:center;"><img src="${item.img}" alt="${item.name}"><div><div class="cart-line-name">${item.name}</div><div class="cart-line-price">${item.price} x${item.qty}</div></div></div>`;
+      lines.appendChild(div);
+    });
+    document.getElementById('subtotal').textContent = '₹'+total;
+    document.getElementById('cartCount').textContent = units;
+    let pct=0, note='';
+    if(units < 2){ pct = (units/2)*33; note = `Add ${2-units} more product${2-units>1?'s':''} to unlock the ₹379 / 2-product price`; }
+    else if(units < 3){ pct = 33 + ((units-2)/1)*33; note = `Add 1 more product to unlock the ₹549 / 3-product price`; }
+    else if(units < 5){ pct = 66 + ((units-3)/2)*34; note = `Add ${5-units} more to unlock the ₹799 / 5-product Complete Home price`; }
+    else { pct = 100; note = `You've unlocked the best-value 5-product bundle price!`; }
+    document.getElementById('tierFill').style.width = Math.min(100,pct)+'%';
+    document.getElementById('tierNote').textContent = note;
+  }
+  const reelVideos = Array.from(document.querySelectorAll('.reel-video'));
+  const reelVisibility = new Map(reelVideos.map(video => [video, 0]));
+  let activeReel = null;
+  function hydrateReel(video){
+    if(!video.dataset.src) return;
+    video.src = video.dataset.src;
+    delete video.dataset.src;
+    video.load();
+  }
+  function updateReelState(video){
+    const card = video.closest('.reel-card');
+    card.classList.toggle('is-playing', !video.paused);
+    card.classList.toggle('is-unmuted', !video.muted);
+    card.querySelector('.reel-play-toggle').setAttribute('aria-label', `${video.paused ? 'Play' : 'Pause'} ${video.getAttribute('aria-label')}`);
+    card.querySelector('.reel-sound').setAttribute('aria-label', `${video.muted ? 'Unmute' : 'Mute'} ${video.getAttribute('aria-label')}`);
+  }
+  function pauseOtherReels(video){
+    reelVideos.forEach(other => {
+      if(other !== video && !other.paused){ other.pause(); updateReelState(other); }
+    });
+  }
+  function playReel(video){
+    hydrateReel(video);
+    pauseOtherReels(video);
+    activeReel = video;
+    const begin = () => video.play().then(() => updateReelState(video)).catch(() => updateReelState(video));
+    if(video.readyState >= 2) begin();
+    else video.addEventListener('canplay', begin, { once: true });
+  }
+  function chooseVisibleReel(){
+    if(document.hidden) return;
+    const visible = reelVideos
+      .map(video => ({ video, ratio: reelVisibility.get(video) || 0 }))
+      .filter(item => item.ratio >= .55)
+      .sort((a,b) => b.ratio - a.ratio);
+    if(!visible.length){
+      if(activeReel && !activeReel.paused){ activeReel.pause(); updateReelState(activeReel); }
+      activeReel = null;
+      return;
+    }
+    if(activeReel !== visible[0].video || activeReel.paused) playReel(visible[0].video);
+  }
+  if('IntersectionObserver' in window){
+    const loadObserver = new IntersectionObserver(entries => {
+      entries.filter(entry => entry.isIntersecting).forEach(entry => {
+        const video = entry.target;
+        const delay = reelVideos.indexOf(video) * 450;
+        setTimeout(() => hydrateReel(video), delay);
+        loadObserver.unobserve(video);
+      });
+    }, { rootMargin: '300px', threshold: .01 });
+    const playObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => reelVisibility.set(entry.target, entry.intersectionRatio));
+      chooseVisibleReel();
+    }, { threshold: [0, .25, .55, .75, 1] });
+    reelVideos.forEach(video => { loadObserver.observe(video); playObserver.observe(video); });
+  } else if(reelVideos[0]){
+    playReel(reelVideos[0]);
+  }
+  reelVideos.forEach(video => {
+    const card = video.closest('.reel-card');
+    card.querySelector('.reel-play-toggle').addEventListener('click', () => video.paused ? playReel(video) : video.pause());
+    card.querySelector('.reel-sound').addEventListener('click', () => {
+      video.muted = !video.muted;
+      if(!video.paused) pauseOtherReels(video);
+      else playReel(video);
+      updateReelState(video);
+    });
+    video.addEventListener('click', () => video.paused ? playReel(video) : video.pause());
+    video.addEventListener('play', () => updateReelState(video));
+    video.addEventListener('pause', () => updateReelState(video));
+    video.addEventListener('volumechange', () => updateReelState(video));
+    updateReelState(video);
+  });
+  document.addEventListener('visibilitychange', () => {
+    if(document.hidden){ reelVideos.forEach(video => video.pause()); }
+    else chooseVisibleReel();
+  });
+  document.querySelectorAll('.faq-item').forEach(item=>{ if(!item.classList.contains('open')){} });
+  renderCart();
+</script>
+
+</body>
+</html>
