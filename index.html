@@ -391,14 +391,15 @@
 </section>
 
 <!-- 06 REELS / UGC -->
-<section>
+<section id="reels">
   <div class="wrap">
     <div class="head-block">
       <span class="eyebrow">See it in real homes</span>
       <h2>Reels & UGC</h2>
     </div>
-    <div class="reel-scroller">
-      <article class="reel-card">
+    <div class="reel-carousel">
+      <div class="reel-scroller" id="reelScroller" role="region" aria-roledescription="carousel" aria-label="Customer reels" tabindex="0">
+      <article class="reel-card" role="group" aria-roledescription="slide" aria-label="1 of 3">
         <video class="reel-video" data-src="assets/happi-planet-reel-01.mp4" poster="assets/happi-planet-reel-01.webp" preload="none" muted loop playsinline webkit-playsinline aria-label="Happi Planet customer reel 1"></video>
         <button class="reel-control reel-sound" type="button" aria-label="Unmute reel 1">
           <svg class="sound-off" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6.5 9H3v6h3.5l4.5 4V5Z"/><path d="m16 9 5 6m0-6-5 6"/></svg>
@@ -409,7 +410,7 @@
           <svg class="icon-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5h4v14H7zm6 0h4v14h-4z"/></svg>
         </button>
       </article>
-      <article class="reel-card">
+      <article class="reel-card" role="group" aria-roledescription="slide" aria-label="2 of 3">
         <video class="reel-video" data-src="assets/happi-planet-reel-02.mp4" poster="assets/happi-planet-reel-02.webp" preload="none" muted loop playsinline webkit-playsinline aria-label="Happi Planet customer reel 2"></video>
         <button class="reel-control reel-sound" type="button" aria-label="Unmute reel 2">
           <svg class="sound-off" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6.5 9H3v6h3.5l4.5 4V5Z"/><path d="m16 9 5 6m0-6-5 6"/></svg>
@@ -420,7 +421,7 @@
           <svg class="icon-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5h4v14H7zm6 0h4v14h-4z"/></svg>
         </button>
       </article>
-      <article class="reel-card">
+      <article class="reel-card" role="group" aria-roledescription="slide" aria-label="3 of 3">
         <video class="reel-video" data-src="assets/happi-planet-reel-03.mp4" poster="assets/happi-planet-reel-03.webp" preload="none" muted loop playsinline webkit-playsinline aria-label="Happi Planet customer reel 3"></video>
         <button class="reel-control reel-sound" type="button" aria-label="Unmute reel 3">
           <svg class="sound-off" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6.5 9H3v6h3.5l4.5 4V5Z"/><path d="m16 9 5 6m0-6-5 6"/></svg>
@@ -431,6 +432,15 @@
           <svg class="icon-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5h4v14H7zm6 0h4v14h-4z"/></svg>
         </button>
       </article>
+      </div>
+      <div class="reel-carousel-nav" aria-label="Reel carousel controls">
+        <button class="reel-carousel-btn reel-prev" type="button" aria-label="Previous reel">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
+        </button>
+        <button class="reel-carousel-btn reel-next" type="button" aria-label="Next reel">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+        </button>
+      </div>
     </div>
 
     <aside class="campaign-banner campaign-home" aria-labelledby="home-banner-title">
@@ -702,9 +712,59 @@
     document.getElementById('tierFill').style.width = Math.min(100,pct)+'%';
     document.getElementById('tierNote').textContent = note;
   }
+  const reelScroller = document.getElementById('reelScroller');
+  const reelCards = Array.from(document.querySelectorAll('.reel-card'));
   const reelVideos = Array.from(document.querySelectorAll('.reel-video'));
+  const reelPrev = document.querySelector('.reel-prev');
+  const reelNext = document.querySelector('.reel-next');
   const reelVisibility = new Map(reelVideos.map(video => [video, 0]));
   let activeReel = null;
+  let currentReelIndex = Math.min(1, Math.max(0, reelCards.length - 1));
+  let reelScrollTimer = null;
+  function setReelSlide(index, shouldScroll = true, behavior = 'smooth'){
+    if(!reelCards.length) return;
+    currentReelIndex = Math.max(0, Math.min(index, reelCards.length - 1));
+    reelCards.forEach((card, cardIndex) => {
+      const isActive = cardIndex === currentReelIndex;
+      card.classList.toggle('is-active', isActive);
+      if(isActive) card.setAttribute('aria-current', 'true');
+      else card.removeAttribute('aria-current');
+    });
+    if(reelPrev) reelPrev.disabled = currentReelIndex === 0;
+    if(reelNext) reelNext.disabled = currentReelIndex === reelCards.length - 1;
+    if(shouldScroll && reelScroller){
+      const card = reelCards[currentReelIndex];
+      const target = card.offsetLeft - (reelScroller.clientWidth - card.offsetWidth) / 2;
+      reelScroller.scrollTo({ left: target, behavior });
+    }
+  }
+  function nearestReelIndex(){
+    if(!reelScroller || !reelCards.length) return 0;
+    const center = reelScroller.scrollLeft + reelScroller.clientWidth / 2;
+    return reelCards.reduce((nearest, card, index) => {
+      const cardCenter = card.offsetLeft + card.offsetWidth / 2;
+      const nearestCard = reelCards[nearest];
+      const nearestCenter = nearestCard.offsetLeft + nearestCard.offsetWidth / 2;
+      return Math.abs(cardCenter - center) < Math.abs(nearestCenter - center) ? index : nearest;
+    }, 0);
+  }
+  if(reelPrev) reelPrev.addEventListener('click', () => setReelSlide(currentReelIndex - 1));
+  if(reelNext) reelNext.addEventListener('click', () => setReelSlide(currentReelIndex + 1));
+  if(reelScroller){
+    reelScroller.addEventListener('scroll', () => {
+      clearTimeout(reelScrollTimer);
+      reelScrollTimer = setTimeout(() => setReelSlide(nearestReelIndex(), false), 90);
+    }, { passive: true });
+    reelScroller.addEventListener('keydown', event => {
+      if(event.key === 'ArrowLeft'){ event.preventDefault(); setReelSlide(currentReelIndex - 1); }
+      if(event.key === 'ArrowRight'){ event.preventDefault(); setReelSlide(currentReelIndex + 1); }
+    });
+    let reelResizeTimer = null;
+    window.addEventListener('resize', () => {
+      clearTimeout(reelResizeTimer);
+      reelResizeTimer = setTimeout(() => setReelSlide(currentReelIndex, true, 'auto'), 120);
+    });
+  }
   function hydrateReel(video){
     if(!video.dataset.src) return;
     video.src = video.dataset.src;
@@ -761,21 +821,34 @@
   } else if(reelVideos[0]){
     playReel(reelVideos[0]);
   }
-  reelVideos.forEach(video => {
+  reelVideos.forEach((video, index) => {
     const card = video.closest('.reel-card');
-    card.querySelector('.reel-play-toggle').addEventListener('click', () => video.paused ? playReel(video) : video.pause());
-    card.querySelector('.reel-sound').addEventListener('click', () => {
+    card.addEventListener('click', event => {
+      if(index !== currentReelIndex && !event.target.closest('button, video')) setReelSlide(index);
+    });
+    card.querySelector('.reel-play-toggle').addEventListener('click', event => {
+      event.stopPropagation();
+      if(index !== currentReelIndex){ setReelSlide(index); return; }
+      video.paused ? playReel(video) : video.pause();
+    });
+    card.querySelector('.reel-sound').addEventListener('click', event => {
+      event.stopPropagation();
+      if(index !== currentReelIndex){ setReelSlide(index); return; }
       video.muted = !video.muted;
       if(!video.paused) pauseOtherReels(video);
       else playReel(video);
       updateReelState(video);
     });
-    video.addEventListener('click', () => video.paused ? playReel(video) : video.pause());
+    video.addEventListener('click', () => {
+      if(index !== currentReelIndex){ setReelSlide(index); return; }
+      video.paused ? playReel(video) : video.pause();
+    });
     video.addEventListener('play', () => updateReelState(video));
     video.addEventListener('pause', () => updateReelState(video));
     video.addEventListener('volumechange', () => updateReelState(video));
     updateReelState(video);
   });
+  requestAnimationFrame(() => setReelSlide(currentReelIndex, true, 'auto'));
   document.addEventListener('visibilitychange', () => {
     if(document.hidden){ reelVideos.forEach(video => video.pause()); }
     else chooseVisibleReel();
