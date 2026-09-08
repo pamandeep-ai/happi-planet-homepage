@@ -124,23 +124,31 @@
       <span class="eyebrow">Start here</span>
       <h2>What are you dealing with?</h2>
     </div>
-    <div class="problem-grid">
+    <div class="problem-grid" id="problemCarousel" role="region" aria-label="Cleaning problems" tabindex="0">
       <a class="problem-card" href="https://www.happi-planet.com/products/happi-planet-kitchen-cleaner-india-s-1st-foaming-formulation-for-less-scrubbing-500ml-suitable-for-stoves-chimneys-counter-tops-appliances-walls-cabinets-non-toxic-natural">
-        <div class="img-box"><img src="assets/problem-grease.jpg" alt="Grease buildup" loading="lazy" decoding="async"></div>
+        <div class="img-box"><img src="assets/problem-grease.jpg" alt="Grease buildup" width="800" height="1000" loading="lazy" decoding="async"></div>
         <div class="cap">Grease →</div>
       </a>
       <a class="problem-card" href="https://www.happi-planet.com/products/tap-cleaner-lime-scale-remover">
-        <div class="img-box"><img src="assets/problem-limescale.jpg" alt="Limescale on a tap" loading="lazy" decoding="async"></div>
+        <div class="img-box"><img src="assets/problem-limescale.jpg" alt="Limescale on a tap" width="800" height="1000" loading="lazy" decoding="async"></div>
         <div class="cap">Limescale →</div>
       </a>
       <a class="problem-card" href="https://www.happi-planet.com/products/magic-eraser">
-        <div class="img-box"><img src="assets/problem-stains.jpg" alt="Stubborn stains" loading="lazy" decoding="async"></div>
+        <div class="img-box"><img src="assets/problem-stains.jpg" alt="Stubborn stains" width="800" height="1000" loading="lazy" decoding="async"></div>
         <div class="cap">Stains →</div>
       </a>
       <a class="problem-card" href="https://www.happi-planet.com/collections/home">
-        <div class="img-box"><img src="assets/problem-dirt.jpg" alt="Everyday dirt" loading="lazy" decoding="async"></div>
+        <div class="img-box"><img src="assets/problem-dirt.jpg" alt="Everyday dirt" width="800" height="1000" loading="lazy" decoding="async"></div>
         <div class="cap">Everyday Dirt →</div>
       </a>
+    </div>
+    <div class="problem-carousel-controls" aria-label="Cleaning problem carousel controls">
+      <button class="problem-carousel-btn problem-prev" type="button" aria-label="Previous cleaning problem">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
+      </button>
+      <button class="problem-carousel-btn problem-next" type="button" aria-label="Next cleaning problem">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+      </button>
     </div>
     <div class="aov-banner">
       <img class="banner-art" src="assets/happi-bundle-backdrop.webp" alt="" width="1536" height="1024" loading="lazy" decoding="async">
@@ -652,6 +660,25 @@
   });
   showHeroSlide(0);
   startHeroAutoplay();
+
+  const problemCarousel = document.getElementById('problemCarousel');
+  const problemPrev = document.querySelector('.problem-prev');
+  const problemNext = document.querySelector('.problem-next');
+  function updateProblemControls(){
+    const maxScroll = problemCarousel.scrollWidth - problemCarousel.clientWidth;
+    problemPrev.disabled = problemCarousel.scrollLeft <= 2;
+    problemNext.disabled = problemCarousel.scrollLeft >= maxScroll - 2;
+  }
+  function scrollProblems(direction){
+    const card = problemCarousel.querySelector('.problem-card');
+    const gap = parseFloat(getComputedStyle(problemCarousel).gap) || 0;
+    problemCarousel.scrollBy({ left: direction * (card.getBoundingClientRect().width + gap), behavior: 'smooth' });
+  }
+  problemPrev.addEventListener('click', ()=>scrollProblems(-1));
+  problemNext.addEventListener('click', ()=>scrollProblems(1));
+  problemCarousel.addEventListener('scroll', updateProblemControls, { passive: true });
+  window.addEventListener('resize', updateProblemControls);
+  updateProblemControls();
 
   let cart = [];
   function toggleCart(){ document.getElementById('cartDrawer').classList.toggle('open'); }

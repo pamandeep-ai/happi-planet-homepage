@@ -93,13 +93,19 @@ header { position: sticky; top: 0; z-index: 50; background: var(--forest-tint); 
 .promise-icon { grid-row: 1 / 3; align-self: center; display: grid; place-items: center; width: 26px; height: 26px; color: var(--forest); border: 1px solid currentColor; border-radius: 50%; font-size: 14px; line-height: 1; }
 @keyframes promise-scroll { to { transform: translateX(-50%); } }
 #shop-by-problem .head-block, .section-sand .head-block, #routine .head-block { margin-inline: auto; text-align: center; }
-.problem-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; }
-.problem-card { position: relative; overflow: hidden; background: var(--cream); border: 1px solid #ffffff80; border-radius: var(--radius-m); box-shadow: 0 10px 28px #004a420d; }
-.problem-card .img-box { aspect-ratio: 1.3; overflow: hidden; }
-.problem-card img { width: 100%; height: 100%; object-fit: cover; transition: transform .35s; }
-.problem-card:hover img { transform: scale(1.035); }
-.problem-card .cap { position: absolute; z-index: 2; right: 12px; bottom: 12px; left: 12px; display: flex; align-items: center; justify-content: center; min-height: 48px; padding: 10px 16px; color: var(--forest-dark); background: #ffffffad; border: 1px solid #ffffffc7; border-radius: 999px; box-shadow: 0 8px 22px #004a4224, inset 0 1px 0 #ffffff85; backdrop-filter: blur(14px) saturate(135%); -webkit-backdrop-filter: blur(14px) saturate(135%); text-align: center; font-size: 14px; font-weight: 700; transition: background .2s, transform .2s, box-shadow .2s; }
+.problem-grid { display: flex; gap: 18px; overflow-x: auto; padding: 3px; scroll-snap-type: x mandatory; scroll-padding-inline: 3px; scrollbar-width: none; overscroll-behavior-inline: contain; -webkit-overflow-scrolling: touch; }
+.problem-grid::-webkit-scrollbar { display: none; }
+.problem-card { position: relative; flex: 0 0 calc((100% - 36px) / 3); min-width: 260px; overflow: hidden; background: var(--cream); border: 1px solid #ffffff80; border-radius: var(--radius-m); box-shadow: 0 10px 28px #004a420d; scroll-snap-align: start; }
+.problem-card .img-box { aspect-ratio: 4 / 5; overflow: hidden; background: var(--cream); }
+.problem-card img { width: 100%; height: 100%; object-fit: cover; object-position: center; transition: filter .25s; }
+.problem-card:hover img { filter: brightness(1.025); }
+.problem-card .cap { position: absolute; z-index: 2; bottom: 12px; left: 12px; display: inline-flex; align-items: center; min-height: 34px; max-width: calc(100% - 24px); padding: 6px 12px; color: var(--forest-dark); background: #ffffffe0; border: 1px solid #ffffffef; border-radius: 999px; box-shadow: 0 6px 18px #004a4220, inset 0 1px 0 #ffffff85; backdrop-filter: blur(12px) saturate(135%); -webkit-backdrop-filter: blur(12px) saturate(135%); font-size: 13px; font-weight: 700; line-height: 1.25; white-space: nowrap; transition: background .2s, transform .2s, box-shadow .2s; }
 .problem-card:hover .cap { background: #ffffffd1; box-shadow: 0 10px 26px #004a422e, inset 0 1px 0 #ffffffa3; transform: translateY(-2px); }
+.problem-carousel-controls { display: flex; justify-content: center; gap: 10px; margin-top: 18px; }
+.problem-carousel-btn { display: grid; place-items: center; width: 44px; height: 44px; padding: 0; color: var(--forest-dark); background: var(--white); border: 1px solid #00605633; border-radius: 50%; transition: color .2s, background .2s, opacity .2s; }
+.problem-carousel-btn:hover:not(:disabled) { color: var(--white); background: var(--forest); }
+.problem-carousel-btn:disabled { opacity: .35; cursor: default; }
+.problem-carousel-btn svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
 .aov-banner { position: relative; isolation: isolate; overflow: hidden; margin-top: 36px; min-height: 275px; border-radius: var(--radius-l); background: var(--forest-tint); padding: 35px 40px; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; gap: 18px; }
 .banner-art { position: absolute; inset: 0 0 0 auto; z-index: -2; width: 67%; height: 100%; object-fit: cover; object-position: right 70%; }
 .aov-banner::after { content: ''; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, var(--forest-tint) 35%, transparent 75%); }
@@ -290,6 +296,7 @@ footer { padding: 45px 0 24px; background: var(--forest-dark); color: var(--fore
   .hero-ctas { gap: 10px; }
   .hero-ctas .btn { font-size: 12px; padding-inline: 18px; }
   .problem-grid { gap: 14px; }
+  .problem-card { flex-basis: calc((100% - 14px) / 2); }
   .problem-card .cap { font-size: 12px; }
   .proof-grid { grid-template-columns: minmax(0, 1fr); max-width: 620px; margin-inline: auto; gap: 18px; }
   .proof-product { grid-template-columns: 100px minmax(0, 1fr); gap: 20px; padding-block: 18px; }
@@ -327,9 +334,11 @@ footer { padding: 45px 0 24px; background: var(--forest-dark); color: var(--fore
   .promise-icon { width: 24px; height: 24px; font-size: 13px; }
   .promise-item strong { font-size: 11px; }
   .promise-item > span:last-child { font-size: 10px; }
-  .problem-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
-  .problem-card .img-box { aspect-ratio: 1.18; }
-  .problem-card .cap { right: 8px; bottom: 8px; left: 8px; min-height: 44px; padding: 8px 10px; font-size: 13px; }
+  .problem-grid { gap: 14px; margin-right: calc(-1 * var(--gutter)); padding-right: var(--gutter); }
+  .problem-card { flex-basis: min(76vw, 300px); min-width: 0; }
+  .problem-card .img-box { aspect-ratio: 4 / 5; }
+  .problem-card .cap { bottom: 10px; left: 10px; min-height: 32px; max-width: calc(100% - 20px); padding: 5px 11px; font-size: 12px; }
+  .problem-carousel-controls { margin-top: 14px; }
   .aov-banner { margin-top: 26px; min-height: 385px; padding: 25px 24px 185px; gap: 16px; }
   .aov-banner p { max-width: 100%; font-size: 14px; }
   .banner-heading { font-size: 29px; margin-bottom: 10px; }
@@ -397,6 +406,7 @@ footer { padding: 45px 0 24px; background: var(--forest-dark); color: var(--fore
   :root { --gutter: 16px; }
   .hero-grid, .hero-copy { min-height: 340px; }
   .hero-ctas { grid-template-columns: 1fr; max-width: 174px; }
+  .problem-card { flex-basis: 82vw; }
   .prod-scroller, .problem-grid, .review-grid, .reel-scroller { gap: 10px; }
   .prod-body { padding-inline: 9px; }
   .review-content { padding: 18px; }
