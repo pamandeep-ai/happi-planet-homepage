@@ -76,11 +76,8 @@ header { position: sticky; top: 0; z-index: 50; background: var(--forest-tint); 
 .hero-visual { position: absolute; inset: 0; width: 100%; overflow: hidden; isolation: isolate; background: var(--forest-tint); }
 .hero-slide--kitchen .hero-visual { background: var(--cream); }
 .hero-slide--home .hero-visual { background: var(--forest-dark); }
-.hero-visual::before { content: ''; position: absolute; inset: -24px; z-index: 0; background-position: center; background-repeat: no-repeat; background-size: cover; filter: blur(20px); opacity: .24; transform: scale(1.04); }
-.hero-slide--clean .hero-visual::before { background-image: url('happi-hero-lifestyle.webp'); }
-.hero-slide--kitchen .hero-visual::before { background-image: url('happi-kitchen-reset-banner.webp'); }
-.hero-slide--home .hero-visual::before { background-image: url('happi-home-care-banner.webp'); }
-.hero-art { position: relative; z-index: 1; width: 100%; height: 100%; object-fit: contain; object-position: center; }
+.hero-visual::before { display: none; }
+.hero-art { position: relative; z-index: 1; width: 100%; height: 100%; object-fit: cover; object-position: center; }
 .promise-strip { position: relative; z-index: 3; overflow: hidden; color: var(--forest-dark); background: #f4faf6; border-block: 1px solid #00605624; }
 .promise-marquee { min-width: 0; overflow: hidden; }
 .promise-track { display: flex; width: max-content; animation: promise-scroll 30s linear infinite; }
@@ -312,8 +309,7 @@ footer { padding: 45px 0 24px; background: var(--forest-dark); color: var(--fore
   .hero-ctas { display: grid; grid-template-columns: 1fr 1fr; gap: 7px; margin: 0; }
   .hero-ctas .btn { min-height: 44px; padding: 8px 6px; font-size: 12px; line-height: 1.2; }
   .hero-visual { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; }
-  .hero-art { object-position: center; }
-  .hero-visual::before { inset: -16px; filter: blur(16px); opacity: .2; }
+  .hero-art { object-position: 62% center; }
   .hero-controls { bottom: 10px; padding: 3px 8px; }
   .promise-track { animation-duration: 24s; }
   .promise-item { grid-template-columns: 24px auto; min-width: 220px; padding: 9px 18px; column-gap: 8px; }
