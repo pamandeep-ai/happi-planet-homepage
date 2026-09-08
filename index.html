@@ -721,6 +721,7 @@
   let activeReel = null;
   let currentReelIndex = Math.min(1, Math.max(0, reelCards.length - 1));
   let reelScrollTimer = null;
+  let reelTargetIndex = null;
   function setReelSlide(index, shouldScroll = true, behavior = 'smooth'){
     if(!reelCards.length) return;
     currentReelIndex = Math.max(0, Math.min(index, reelCards.length - 1));
@@ -734,8 +735,16 @@
     if(reelNext) reelNext.disabled = currentReelIndex === reelCards.length - 1;
     if(shouldScroll && reelScroller){
       const card = reelCards[currentReelIndex];
-      const target = card.offsetLeft - (reelScroller.clientWidth - card.offsetWidth) / 2;
+      const scrollerRect = reelScroller.getBoundingClientRect();
+      const cardRect = card.getBoundingClientRect();
+      const target = reelScroller.scrollLeft + (cardRect.left - scrollerRect.left) - (scrollerRect.width - cardRect.width) / 2;
+      clearTimeout(reelScrollTimer);
+      reelTargetIndex = currentReelIndex;
       reelScroller.scrollTo({ left: target, behavior });
+      reelScrollTimer = setTimeout(() => {
+        reelTargetIndex = null;
+        setReelSlide(nearestReelIndex(), false);
+      }, behavior === 'smooth' ? 320 : 0);
     }
   }
   function nearestReelIndex(){
@@ -748,12 +757,13 @@
       return Math.abs(cardCenter - center) < Math.abs(nearestCenter - center) ? index : nearest;
     }, 0);
   }
-  if(reelPrev) reelPrev.addEventListener('click', () => setReelSlide(currentReelIndex - 1));
-  if(reelNext) reelNext.addEventListener('click', () => setReelSlide(currentReelIndex + 1));
+  if(reelPrev) reelPrev.addEventListener('click', () => setReelSlide((reelTargetIndex ?? currentReelIndex) - 1));
+  if(reelNext) reelNext.addEventListener('click', () => setReelSlide((reelTargetIndex ?? currentReelIndex) + 1));
   if(reelScroller){
     reelScroller.addEventListener('scroll', () => {
+      if(reelTargetIndex !== null) return;
       clearTimeout(reelScrollTimer);
-      reelScrollTimer = setTimeout(() => setReelSlide(nearestReelIndex(), false), 90);
+      reelScrollTimer = setTimeout(() => setReelSlide(nearestReelIndex(), false), 120);
     }, { passive: true });
     reelScroller.addEventListener('keydown', event => {
       if(event.key === 'ArrowLeft'){ event.preventDefault(); setReelSlide(currentReelIndex - 1); }
