@@ -42,14 +42,10 @@
         <div class="wrap">
           <div class="hero-grid">
             <div class="hero-copy">
-              <span class="eyebrow">Better home cleaning</span>
-              <h1>Powerful Cleaning<br><span>Inspired by Nature</span></h1>
-              <p class="lead">Powerful cleaning. Less scrubbing. Made in India.</p>
               <div class="hero-ctas">
                 <a class="btn btn-primary" href="#bestsellers">Shop Bestsellers</a>
                 <a class="btn btn-ghost" href="#shop-by-problem">Find My Fix</a>
               </div>
-              <div class="hero-proof"><span class="stars">★★★★★</span> 4.8 from 1,500+ verified reviews</div>
             </div>
             <div class="hero-visual">
               <img class="hero-art" src="assets/happi-hero-lifestyle.webp" alt="A woman wiping a kitchen counter in a bright, naturally lit home" width="1536" height="1024" fetchpriority="high" decoding="async">
@@ -62,14 +58,10 @@
         <div class="wrap">
           <div class="hero-grid">
             <div class="hero-copy">
-              <span class="eyebrow">The everyday reset</span>
-              <h1>Deep Cleaning<br><span>Made by Nature</span></h1>
-              <p class="lead">Power through everyday kitchen mess with less scrubbing.</p>
               <div class="hero-ctas">
                 <a class="btn btn-primary" href="https://www.happi-planet.com/products/happi-planet-kitchen-cleaner-india-s-1st-foaming-formulation-for-less-scrubbing-500ml-suitable-for-stoves-chimneys-counter-tops-appliances-walls-cabinets-non-toxic-natural" tabindex="-1">Shop Kitchen Cleaner</a>
                 <a class="btn btn-ghost" href="#shop-by-problem" tabindex="-1">Find My Fix</a>
               </div>
-              <div class="hero-proof">Less scrubbing · No harsh fumes</div>
             </div>
             <div class="hero-visual">
               <img class="hero-art" src="assets/happi-kitchen-reset-banner.webp" alt="A clean kitchen counter with a stove, sink and reusable cloth" width="1536" height="1024" loading="lazy" decoding="async">
@@ -82,14 +74,10 @@
         <div class="wrap">
           <div class="hero-grid">
             <div class="hero-copy">
-              <span class="eyebrow">Powered by nature</span>
-              <h1>Clean Home<br><span>Happi Planet</span></h1>
-              <p class="lead">Nature-powered essentials made for everyday Indian homes.</p>
               <div class="hero-ctas">
                 <a class="btn btn-primary" href="https://www.happi-planet.com/collections/home" tabindex="-1">Shop Home Care</a>
                 <a class="btn btn-ghost" href="#routine" tabindex="-1">Explore Bundles</a>
               </div>
-              <div class="hero-proof">Plant-based · Cruelty-free · Biodegradable</div>
             </div>
             <div class="hero-visual">
               <img class="hero-art" src="assets/happi-home-care-banner.webp" alt="Reusable cleaning cloths and a natural scrub brush in a woven basket" width="1536" height="1024" loading="lazy" decoding="async">
@@ -100,21 +88,11 @@
     </div>
 
     <div class="hero-controls" aria-label="Hero banner controls">
-      <button class="hero-arrow hero-pause" type="button" aria-label="Pause automatic banners">
-        <svg class="hero-pause-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14M16 5v14"/></svg>
-        <svg class="hero-play-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 10 7-10 7Z"/></svg>
-      </button>
-      <button class="hero-arrow hero-prev" type="button" aria-label="Previous banner">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
-      </button>
       <div class="hero-dots" role="group" aria-label="Choose a banner">
         <button class="hero-dot is-active" type="button" aria-label="Show banner 1" aria-current="true"></button>
         <button class="hero-dot" type="button" aria-label="Show banner 2"></button>
         <button class="hero-dot" type="button" aria-label="Show banner 3"></button>
       </div>
-      <button class="hero-arrow hero-next" type="button" aria-label="Next banner">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
-      </button>
     </div>
   </div>
   <div class="promise-strip" aria-label="Our promises">
@@ -613,18 +591,16 @@
   const heroTrack = document.getElementById('heroTrack');
   const heroSlides = Array.from(heroCarousel.querySelectorAll('.hero-slide'));
   const heroDots = Array.from(heroCarousel.querySelectorAll('.hero-dot'));
-  const heroPauseButton = heroCarousel.querySelector('.hero-pause');
   const reduceHeroMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   let currentHeroSlide = 0;
   let heroTimer = null;
   let heroTouchStart = null;
-  let heroAutoplayPaused = false;
   function stopHeroAutoplay(){
     if(heroTimer){ clearInterval(heroTimer); heroTimer = null; }
   }
   function startHeroAutoplay(){
     stopHeroAutoplay();
-    if(!reduceHeroMotion && !heroAutoplayPaused && !document.hidden){
+    if(!reduceHeroMotion && !document.hidden){
       heroTimer = setInterval(()=>showHeroSlide(currentHeroSlide + 1), 6500);
     }
   }
@@ -648,15 +624,6 @@
     });
     if(userInitiated) startHeroAutoplay();
   }
-  heroCarousel.querySelector('.hero-prev').addEventListener('click', ()=>showHeroSlide(currentHeroSlide - 1, true));
-  heroCarousel.querySelector('.hero-next').addEventListener('click', ()=>showHeroSlide(currentHeroSlide + 1, true));
-  heroPauseButton.addEventListener('click', ()=>{
-    heroAutoplayPaused = !heroAutoplayPaused;
-    heroPauseButton.classList.toggle('is-paused', heroAutoplayPaused);
-    heroPauseButton.setAttribute('aria-label', heroAutoplayPaused ? 'Play automatic banners' : 'Pause automatic banners');
-    if(heroAutoplayPaused) stopHeroAutoplay();
-    else startHeroAutoplay();
-  });
   heroDots.forEach((dot, index)=>dot.addEventListener('click', ()=>showHeroSlide(index, true)));
   heroCarousel.addEventListener('mouseenter', stopHeroAutoplay);
   heroCarousel.addEventListener('mouseleave', startHeroAutoplay);
