@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/visual-system.css">
+<link rel="stylesheet" href="assets/visual-system.css?v=20260909-1">
 </head>
 <body>
 
@@ -87,13 +87,6 @@
       </article>
     </div>
 
-    <div class="hero-controls" aria-label="Hero banner controls">
-      <div class="hero-dots" role="group" aria-label="Choose a banner">
-        <button class="hero-dot is-active" type="button" aria-label="Show banner 1" aria-current="true"></button>
-        <button class="hero-dot" type="button" aria-label="Show banner 2"></button>
-        <button class="hero-dot" type="button" aria-label="Show banner 3"></button>
-      </div>
-    </div>
   </div>
   <div class="promise-strip" aria-label="Our promises">
     <div class="promise-marquee">
@@ -598,7 +591,6 @@
   const heroCarousel = document.getElementById('heroCarousel');
   const heroTrack = document.getElementById('heroTrack');
   const heroSlides = Array.from(heroCarousel.querySelectorAll('.hero-slide'));
-  const heroDots = Array.from(heroCarousel.querySelectorAll('.hero-dot'));
   const reduceHeroMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   let currentHeroSlide = 0;
   let heroTimer = null;
@@ -624,15 +616,8 @@
         else control.setAttribute('tabindex', '-1');
       });
     });
-    heroDots.forEach((dot, dotIndex)=>{
-      const active = dotIndex === currentHeroSlide;
-      dot.classList.toggle('is-active', active);
-      if(active) dot.setAttribute('aria-current', 'true');
-      else dot.removeAttribute('aria-current');
-    });
     if(userInitiated) startHeroAutoplay();
   }
-  heroDots.forEach((dot, index)=>dot.addEventListener('click', ()=>showHeroSlide(index, true)));
   heroCarousel.addEventListener('mouseenter', stopHeroAutoplay);
   heroCarousel.addEventListener('mouseleave', startHeroAutoplay);
   heroCarousel.addEventListener('focusin', stopHeroAutoplay);
