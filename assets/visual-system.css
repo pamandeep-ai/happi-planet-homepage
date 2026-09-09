@@ -110,20 +110,38 @@ header { position: sticky; top: 0; z-index: 50; background: var(--forest-tint); 
 .campaign-copy h3 { max-width: 400px; font-size: clamp(28px, 3vw, 42px); line-height: 1.15; }
 .campaign-copy p { max-width: 32ch; margin-top: 15px; color: var(--ink-soft); font-size: 16px; line-height: 1.6; }
 .campaign-copy .btn { margin-top: 22px; }
-.campaign-home { --campaign-bg: var(--forest-dark); color: var(--white); }
-.campaign-home .eyebrow, .campaign-home .campaign-copy p { color: var(--forest-tint); }
+.campaign-home {
+  --campaign-bg: var(--forest-dark);
+  --campaign-glass: rgb(255 255 255 / 14%);
+  --campaign-glass-border: rgb(255 255 255 / 25%);
+  --campaign-glass-shadow: 0 18px 44px rgb(0 32 28 / 28%);
+  min-height: clamp(380px, 34vw, 500px);
+  padding: clamp(28px, 4vw, 56px);
+  color: var(--white);
+  background: var(--campaign-bg);
+}
+.campaign-home .campaign-copy {
+  z-index: 1;
+  width: clamp(320px, 38%, 500px);
+  padding: clamp(24px, 3vw, 38px);
+  background: var(--campaign-glass);
+  border: 1px solid var(--campaign-glass-border);
+  border-radius: 18px;
+  box-shadow: var(--campaign-glass-shadow);
+  backdrop-filter: blur(14px) saturate(120%);
+  -webkit-backdrop-filter: blur(14px) saturate(120%);
+}
+.campaign-home .campaign-copy h3 { color: var(--white); }
+.campaign-home .eyebrow,
+.campaign-home .campaign-copy p { color: rgb(255 255 255 / 90%); }
 .campaign-home::after { display: none; }
 .bundle-campaign-picture { position: absolute; inset: 0; z-index: -2; }
-.bundle-campaign-art { width: 100%; height: 100%; object-fit: contain; object-position: right center; background: var(--forest-dark); }
-@media (max-width: 699px) {
-  .campaign-home { flex-direction: column; min-height: 0; }
-  .campaign-home .campaign-copy { width: 100%; padding: 24px 22px 20px; }
-  .campaign-home .campaign-copy h3 { max-width: 290px; font-size: 28px; }
-  .bundle-campaign-picture { position: static; order: 1; display: block; width: 100%; height: 300px; }
-  .bundle-campaign-art { width: 100%; height: 100%; object-position: center; }
-}
-.campaign-light-button { color: var(--forest-dark); background: var(--cream); }
+.bundle-campaign-art { width: 100%; height: 100%; object-fit: cover; object-position: center center; background: var(--forest-dark); }
+.campaign-light-button { color: var(--forest-dark); background: var(--white); }
 .campaign-light-button:hover { background: var(--white); }
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .campaign-home .campaign-copy { background: rgb(0 48 43 / 88%); }
+}
 @media (max-width: 899px) {
   .campaign-copy { width: 56%; padding: 30px; }
   .campaign-copy h3 { font-size: 32px; }
@@ -137,6 +155,26 @@ header { position: sticky; top: 0; z-index: 50; background: var(--forest-tint); 
   .campaign-copy .btn { max-width: 100%; min-height: 40px; margin-top: 18px; padding: 7px 12px; font-size: 12px; }
   .campaign-art { width: 75%; object-position: 78% 50%; }
   .campaign-banner::after { background: linear-gradient(90deg, var(--campaign-bg) 38%, transparent 100%); }
+
+  .campaign-home {
+    min-height: clamp(480px, 136vw, 600px);
+    padding: 16px;
+    align-items: flex-end;
+  }
+  .campaign-home .campaign-copy {
+    width: 100%;
+    padding: 20px;
+    background: rgb(0 48 43 / 70%);
+    border-radius: 16px;
+    backdrop-filter: blur(16px) saturate(115%);
+    -webkit-backdrop-filter: blur(16px) saturate(115%);
+  }
+  .campaign-home .campaign-copy h3 { max-width: 300px; font-size: clamp(25px, 7vw, 30px); }
+  .campaign-home .campaign-copy .eyebrow { color: rgb(255 255 255 / 92%); }
+  .campaign-home .campaign-copy p { color: rgb(255 255 255 / 92%); }
+  .campaign-home .campaign-copy .btn { min-height: 44px; color: var(--forest-dark); background: var(--white); }
+  .bundle-campaign-picture { position: absolute; inset: 0; display: block; width: 100%; height: 100%; }
+  .bundle-campaign-art { width: 100%; height: 100%; object-fit: cover; object-position: center center; }
 }
 @media (max-width: 359px) {
   .campaign-copy { padding-left: 18px; width: 65%; }
