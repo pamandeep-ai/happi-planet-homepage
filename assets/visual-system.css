@@ -102,7 +102,7 @@ header { position: sticky; top: 0; z-index: 50; background: var(--forest-tint); 
 .problem-carousel-btn:disabled { opacity: .35; cursor: default; }
 .problem-carousel-btn svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
 /* Additional lifestyle banners: readable copy with original generated artwork. */
-.campaign-banner { --campaign-bg: var(--cream); position: relative; isolation: isolate; overflow: hidden; display: flex; align-items: center; min-height: 320px; margin-top: 38px; border-radius: var(--radius-l); background: var(--campaign-bg); }
+.campaign-banner { --campaign-bg: var(--cream); position: relative; isolation: isolate; overflow: hidden; display: flex; align-items: center; width: 100vw; max-width: none; min-height: 320px; margin-top: 38px; margin-inline: calc(50% - 50vw); border-radius: 0; background: var(--campaign-bg); }
 .campaign-art { position: absolute; inset: 0 0 0 auto; z-index: -2; width: 72%; height: 100%; object-fit: cover; object-position: 70% 55%; }
 .campaign-banner::after { content: ''; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, var(--campaign-bg) 32%, transparent 76%); pointer-events: none; }
 .campaign-copy { position: relative; width: 52%; padding: 40px; }
