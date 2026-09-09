@@ -157,14 +157,17 @@ header { position: sticky; top: 0; z-index: 50; background: var(--forest-tint); 
   .campaign-banner::after { background: linear-gradient(90deg, var(--campaign-bg) 38%, transparent 100%); }
 
   .campaign-home {
-    min-height: clamp(480px, 136vw, 600px);
-    padding: 16px;
-    align-items: flex-end;
+    min-height: 0;
+    padding: 0 0 16px;
+    flex-direction: column;
+    align-items: stretch;
   }
   .campaign-home .campaign-copy {
-    width: 100%;
+    order: 1;
+    width: calc(100% - 32px);
+    margin: 16px 16px 0;
     padding: 20px;
-    background: rgb(0 48 43 / 70%);
+    background: rgb(255 255 255 / 14%);
     border-radius: 16px;
     backdrop-filter: blur(16px) saturate(115%);
     -webkit-backdrop-filter: blur(16px) saturate(115%);
@@ -173,7 +176,7 @@ header { position: sticky; top: 0; z-index: 50; background: var(--forest-tint); 
   .campaign-home .campaign-copy .eyebrow { color: rgb(255 255 255 / 92%); }
   .campaign-home .campaign-copy p { color: rgb(255 255 255 / 92%); }
   .campaign-home .campaign-copy .btn { min-height: 44px; color: var(--forest-dark); background: var(--white); }
-  .bundle-campaign-picture { position: absolute; inset: 0; display: block; width: 100%; height: 100%; }
+  .bundle-campaign-picture { position: relative; inset: auto; z-index: 0; order: 0; display: block; width: 100%; height: auto; aspect-ratio: 1016 / 780; }
   .bundle-campaign-art { width: 100%; height: 100%; object-fit: cover; object-position: center center; }
 }
 @media (max-width: 359px) {
