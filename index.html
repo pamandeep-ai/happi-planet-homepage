@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/visual-system.css?v=20260909-8">
+<link rel="stylesheet" href="assets/visual-system.css?v=20260909-9">
 </head>
 <body>
 
@@ -698,6 +698,17 @@
     document.getElementById('tierNote').textContent = note;
   }
   const reelScroller = document.getElementById('reelScroller');
+  if(reelScroller){
+    const suppliedReels = Array.from(reelScroller.querySelectorAll('.reel-card'));
+    suppliedReels.forEach(card => reelScroller.appendChild(card.cloneNode(true)));
+    const displayedReels = Array.from(reelScroller.querySelectorAll('.reel-card'));
+    displayedReels.forEach((card, index) => {
+      const creativeNumber = (index % suppliedReels.length) + 1;
+      card.setAttribute('aria-label', `${index + 1} of ${displayedReels.length}`);
+      const video = card.querySelector('.reel-video');
+      if(video) video.setAttribute('aria-label', `Happi Planet customer reel ${creativeNumber}`);
+    });
+  }
   const reelCards = Array.from(document.querySelectorAll('.reel-card'));
   const reelVideos = Array.from(document.querySelectorAll('.reel-video'));
   const reelPrev = document.querySelector('.reel-prev');
@@ -716,6 +727,8 @@
       if(isActive) card.setAttribute('aria-current', 'true');
       else card.removeAttribute('aria-current');
     });
+    const selectedVideo = reelVideos[currentReelIndex];
+    if(selectedVideo && (reelVisibility.get(selectedVideo) || 0) >= .55) playReel(selectedVideo);
     if(reelPrev) reelPrev.disabled = currentReelIndex === 0;
     if(reelNext) reelNext.disabled = currentReelIndex === reelCards.length - 1;
     if(shouldScroll && reelScroller){
@@ -797,7 +810,8 @@
       activeReel = null;
       return;
     }
-    if(activeReel !== visible[0].video || activeReel.paused) playReel(visible[0].video);
+    const selected = visible.find(item => item.video.closest('.reel-card').classList.contains('is-active')) || visible[0];
+    if(activeReel !== selected.video || activeReel.paused) playReel(selected.video);
   }
   if('IntersectionObserver' in window){
     const loadObserver = new IntersectionObserver(entries => {

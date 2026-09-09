@@ -260,6 +260,16 @@ header { position: sticky; top: 0; z-index: 50; background: var(--forest-tint); 
 .reel-carousel-btn:hover:not(:disabled) { color: var(--white); background: var(--forest); transform: translateY(-2px); }
 .reel-carousel-btn:disabled { opacity: .32; cursor: default; }
 .reel-carousel-btn svg { width: 19px; height: 19px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+@media (min-width: 900px) {
+  .reel-carousel { width: 100%; }
+  .reel-scroller {
+    --reel-card-width: clamp(190px, 17vw, 240px);
+    --reel-gap: clamp(14px, 1.5vw, 22px);
+    padding: 4px 0 12px;
+    scroll-padding-inline: 0;
+  }
+  .reel-card { opacity: .84; transform: scale(.98); }
+}
 #routine { background: var(--cream); }
 .bundle-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 18px; }
 .bundle-card { position: relative; display: grid; grid-template-columns: minmax(220px, .95fr) minmax(320px, 1.3fr) minmax(220px, .85fr); grid-template-areas: "title thumbs price" "meta thumbs save" "meta thumbs cta"; align-items: center; column-gap: 30px; row-gap: 8px; padding: 26px 30px; border: 1px solid var(--line); border-radius: var(--radius-l); background: #fff; text-align: left; }
